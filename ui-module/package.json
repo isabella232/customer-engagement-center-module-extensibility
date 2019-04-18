@@ -1,0 +1,14 @@
+{
+  "name": "ec-modules",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "tsscmp": "^1.0.6"
+  },
+  "engines": {
+    "node": ">= 6.11.0"
+  }
+}

@@ -1,0 +1,62 @@
+ID: com.cec_customer.module_ext
+_schema-version: '2.1'
+version: 1.0.0
+
+modules:
+ - name: com.cec_customer.module_ext.ui
+   type: nodejs
+   path: ui-module
+   parameters:
+     memory: "256M"
+     disk-quota: "256M"
+     host: ${org}-${space}-module-ext-ui
+   properties:
+     BASIC_AUTH_NAME: john
+     BASIC_AUTH_PASSWORD: secret
+
+
+ - name: com.cec_customer.module_ext.service
+   type: nodejs
+   path: service
+   parameters:
+     memory: "256M"
+     disk-quota: "256M"
+     host: ${org}-${space}-module-ext-service
+   requires:
+    - name: module_ext-uaa
+   properties:
+     SAP_JWT_TRUST_ACL: [ { "clientid" : "sb-<client-id-of-cec-xsuaa>", "identityzone" : "<id-of-customer-subaccount>" } ]
+
+resources:
+ - name: module_ext-uaa
+   type: com.sap.xs.uaa
+   parameters:
+      service: xsuaa
+      service-plan: application
+      config:
+          # Tipp: the scopes & xsappname should have short names (not like in this example!), because they will be
+          # included in the access-token, which will be included in the requests. A big token slows the request process!
+         xsappname: module_ext-${space}
+         tenant-mode: shared
+
+         # Scopes represents permissions of a client. These scopes are used for the authorization check
+         # in the service 'com.cec_customer.module_ext.service'.
+         scopes:
+          - name: $XSAPPNAME.or
+            description: Scope permissions to read order records
+          - name: $XSAPPNAME.oc
+            description: Scope permissions to create order records
+          - name: $XSAPPNAME.ou
+            description: Scope permissions to update order records
+          - name: $XSAPPNAME.od
+            description: Scope permissions to delete order records
+         
+         # Role template example where the scopes are assigned to
+         role-templates:
+          - name: Admin
+            description: An role with all CRUD permissions of the order records.
+            scope-references:
+             - $XSAPPNAME.or
+             - $XSAPPNAME.oc
+             - $XSAPPNAME.ou
+             - $XSAPPNAME.od

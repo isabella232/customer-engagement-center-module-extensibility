@@ -1,0 +1,21 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="com.sap.ec.moduletemplate.controller.WAVDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<f:SimpleForm id="form-order" editable="true"
+		layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4">
+		<f:toolbar>
+			<Toolbar>
+				<Title id="form-order-toolbar-title" text="{i18n>WORKAREA_TITLE_SINGULAR}" level="H4" titleStyle="H4"/>
+				<ToolbarSpacer />
+				<Button id="form-order-toolbar-save" text="{i18n>ORDER_DETAIL_SAVE}" type="Emphasized" press="handleSavePress" />
+				<Button id="form-order-toolbar-delete" text="{i18n>ORDER_DETAIL_DELETE}" type="Reject" press="handleDeletePress" />
+				<Button id="form-order-toolbar-cancel" text="{i18n>ORDER_DETAIL_CANCEL}" press="handleCancelPress" />
+			</Toolbar>
+		</f:toolbar>
+		<f:content>
+			<Label text="Title" />
+			<Input id="input-order-title" value="{/title}" />
+		</f:content>
+	</f:SimpleForm>
+
+</mvc:View>

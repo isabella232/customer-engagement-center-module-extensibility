@@ -1,0 +1,28 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.sap.ec.moduletemplate.controller.WAVSearch" xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<List
+		items="{
+			path: '/',
+			sorter: {
+				path: 'id'
+			}
+		}">
+		<items>
+			<StandardListItem
+				title="{title}"
+				type="Navigation"
+				press="handleOrderItemPress"/>
+		</items>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>WORKAREA_TITLE_PLURAL}" level="H2" />
+				<ToolbarSpacer />
+				<Button
+					icon="sap-icon://refresh"
+					press="handleRefreshPress" />
+			</Toolbar>
+		</headerToolbar>
+	</List>
+
+</mvc:View>
