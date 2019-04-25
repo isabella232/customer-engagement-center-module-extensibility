@@ -277,6 +277,12 @@ You can find more information in the Administration Guide for SAP Customer Engag
 
 &nbsp;
 
+## How to contact us
+
+In case you need further help with your Engagement Center, check out the Error Handling section in the Administration Guide for SAP Customer Engagement Center on the [SAP Help Portal](https://help.sap.com/viewer/p/SAP_CUSTOMER_ENGAGEMENT_CENTER).
+
+&nbsp;
+
 # License
 
 Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
