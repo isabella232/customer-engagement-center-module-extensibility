@@ -1,3 +1,8 @@
+![](https://img.shields.io/badge/STATUS-NOT%20CURRENTLY%20MAINTAINED-red.svg?longCache=true&style=flat)
+
+# Important Notice
+This public repository is read-only and no longer maintained.
+
 > **NOTE:** The APIs of the Agent Desktop used in this sample code are currently in rework and will be updated in the future. For more information about Agent Desktop, please follow our SAP Customer Engagement Center Administration Guide [here](https://help.sap.com/viewer/DRAFT/69ecccdd4f3a40298ad3f497d8311493/Dev/en-US/34c973ce592746489ec7f26e857ad549.html).
 
 
